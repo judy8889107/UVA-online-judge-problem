@@ -9,6 +9,6 @@
 <br>4 5
 <br>17 5 -21 15
 <br>第一個除數是7
-` ``cpp
-#include<iostream>
-` ``
+```cpp
+<br>#include<iostream>
+```
