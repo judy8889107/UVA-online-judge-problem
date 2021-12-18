@@ -19,20 +19,25 @@
 ```
 <br>利用array去紀錄，這個部分比較難理解：
 ```cpp
-	int f[m+1][100]={0};
+	int f[n+1][100]={0}; 
 	f[0][0] = 1;
-	for(int i=0;i<m;i++){
-		for(int j=0;j<d;j++){
+	//The f[n+1] record i-th num[]
+	//The [100] is record the reminder of num[i]/k, Why 100 because the k is from 2~100
+	//So the reminder of any integer divides k is less than 100
+	for(int i=0;i<n;i++){
+		for(int j=0;j<k;j++){
 			if(f[i][j]){
 				f[i+1][(j+k+num[i])%k] = 1;
 				f[i+1][(j+k-num[i])%k] = 1;
-					
+				
 			}
 		}
 	}
 ```
 <br>一開始設定f[0][0]=1，從i=0開始，帶入公式
 <br>**※為何要j+k再±num[i](餘數)，因有可能j-num[i]<0，因此要再加上k讓其最後%k的數字為正**
+<br>**f[m+1][100] //100是因為題目設定除數最大就是100，因此餘數範圍介於0~99之間**
+
 <br><br>**17%7=3, 5%7=5, -21%7=0, 15%7=1**
 <br><br>**i=0,j=0 (f[0][0]=1成立)**
 > <br>(0+7+3) % 7 = 3  **//f[1(i+1)][3] = 1**
