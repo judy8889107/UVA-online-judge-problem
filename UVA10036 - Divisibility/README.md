@@ -24,7 +24,7 @@
 	//The f[n+1] record i-th num[]
 	//The [100] is record the reminder of num[i]/k, Why 100 because the k is from 2~100
 	//So the reminder of any integer divides k is less than 100
-	for(int i=0;i<n;i++){
+	for(int i=0;i<n;i++){ 
 		for(int j=0;j<k;j++){
 			if(f[i][j]){
 				f[i+1][(j+k+num[i])%k] = 1;
