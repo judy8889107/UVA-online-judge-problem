@@ -10,7 +10,11 @@ struct Job{
 };
 
 bool compare(Job a, Job b){
-	return a.weight>b.weight; //To sort from large to small.
+	if(a.weight > b.weight) return true;
+	else if(a.weight == b.weight)
+		if(a.index < b.index) return true;
+	
+	return false;
 }
 
 int main(){
