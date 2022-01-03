@@ -1,6 +1,9 @@
 //p10036
 #include<iostream>
 #include<math.h>
+#include<string.h>
+
+int f[11000][100];
 
 using namespace std;
 int main(){
@@ -14,6 +17,7 @@ int main(){
 		cin >> n >> k;
 		
 		int num[n]; //The integer's range is from -10000~10000
+		memset(f,0,sizeof(f));
 		
 		//Input
 		for(int i=0;i<n;i++){
@@ -21,7 +25,6 @@ int main(){
 			num[i] = abs(num[i])%k;
 		}
 		
-		int f[n+1][100]={0}; 
 		f[0][0] = 1;
 		//The f[n+1] record i-th num[]
 		//The [100] is record the reminder of num[i]/k, Why 100 because the k is from 2~100

@@ -2,7 +2,7 @@
 給一長度為 n 的數列與一數 k，問在數列的相鄰兩數之間插入 '+' 或 '-'
 <br>是否存在一運算法使得整個運算結果能夠被 k 整除。(1 <= n <= 10000, 2 <= k <= 100)
 ## 解題<br>
-這題偏難，利用題目預設測資 
+<br>這題偏難，利用題目預設測資 
 <br>2
 <br>4 7
 <br>17 5 -21 15
@@ -18,8 +18,16 @@
 	}
 ```
 <br>利用array去紀錄，這個部分比較難理解：
+<br>**利用f去紀錄時，要宣告在global變數，因為n有可能等於10000**
+<br>**先在輸入每筆測資後，利用memset() function去清空f [ ] [ ]：**
+
 ```cpp
-	int f[n+1][100]={0}; 
+#include<string.h>
+
+memset(f,0,sizeof(f));
+```
+<br>利用array去紀錄：
+```cpp
 	f[0][0] = 1;
 	//The f[n+1] record i-th num[]
 	//The [100] is record the reminder of num[i]/k, Why 100 because the k is from 2~100
