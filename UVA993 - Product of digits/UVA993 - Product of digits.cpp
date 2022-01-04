@@ -16,7 +16,7 @@ int main(){
 	while(test_case--){
 		
 		int n; // 0 <= n <= 10^9
-		int digits[100];
+		int digits[30];
 		int index = 0;
 		bool find;
 		
