@@ -1,16 +1,18 @@
 //p10009
 #include<iostream>
 #include<vector>
+#include<string>
 
 using namespace std;
-using std::cout;
-using std::endl;
+//using std::cout;
+//using std::endl;
 int main(){
 	
 	int test_case;
 	int m,n;
 	string str1, str2;
 	cin >> test_case;
+	bool exit = false;
 	
 	while(test_case--){
 		
@@ -41,6 +43,7 @@ int main(){
 		//Input two city and display the shortest path
 		while(n--){
 			
+			exit = false;
 			cin >> str1 >> str2;
 			int str1_index = str1[0]-'A';
 			int str2_index = str2[0]-'A';
@@ -50,12 +53,12 @@ int main(){
 			for(j=0;j<va[str1_index].size();j++){
 				for(k=0;k<va[str2_index].size();k++){
 					if(va[str1_index].at(j) == va[str2_index].at(k)){
-						goto display; //break double loop
+						exit = true; //break double loop
 					}
 				}
+				if(exit) break;
 			}
 			
-			display:
 			for(int i=0;i<j;i++) printf("%c", va[str1_index].at(i)+'A');
 			for(int i=k;i>-1;i--) printf("%c", va[str2_index].at(i)+'A');
 			
