@@ -24,7 +24,7 @@ int main(){
 		
 		
 		for(int i=0;i<n;i++){
-			int tmp1, tmp2;
+			int tmp1=0, tmp2=0;
 			scanf("%d.%d", &tmp1, &tmp2);
 			cost[i] = tmp1*100+tmp2;
 			sum += cost[i];
