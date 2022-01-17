@@ -3,7 +3,7 @@
 #include<math.h>
 #include<string.h>
 
-int f[11000][100];
+int f[11000][110];
 
 using namespace std;
 int main(){
@@ -18,6 +18,7 @@ int main(){
 		
 		int num[n]; //The integer's range is from -10000~10000
 		memset(f,0,sizeof(f));
+		memset(num,0,sizeof(num));
 		
 		//Input
 		for(int i=0;i<n;i++){
@@ -41,6 +42,7 @@ int main(){
 		
 		if(f[n][0]) cout << "Divisible" << endl;
 		else cout << "Not divisible" << endl;
+		
 		
 		
 	}
